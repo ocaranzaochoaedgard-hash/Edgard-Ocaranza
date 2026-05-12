@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Ejercicio 2 - Nombres</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparador de Nombres</h1>
+        <form method="POST">
+            <input type="text" name="nombre1" placeholder="Nombre 1" required>
+            <input type="text" name="nombre2" placeholder="Nombre 2" required>
+            <input type="text" name="nombre3" placeholder="Nombre 3" required>
+            <button type="submit" class="btn-blue" style="width: 200px; padding: 10px; font-size: 18px;">Enviar</button>
+        </form>
+
+        {% if resultado %}
+            <div style="margin-top: 20px; padding: 15px; background: white; border-radius: 8px;">
+                <p>El nombre más largo es: <strong>{{ resultado.nombre }}</strong></p>
+                <p>Cantidad de caracteres: <strong>{{ resultado.cantidad }}</strong></p>
+            </div>
+        {% endif %}
+        <br>
+        <a href="/">Volver al menú</a>
+    </div>
+</body>
+</html>
